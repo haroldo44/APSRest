@@ -11,33 +11,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ifpb.aps.ws.model.Aluno;
-import ifpb.aps.ws.service.AlunoService;
+import ifpb.aps.ws.model.Curso;
+import ifpb.aps.ws.service.CursoService;
 
 @RestController
-@RequestMapping("/alunos")
-public class AlunoController {
-	
+@RequestMapping("/cursos")
+public class CursoController {
+
 	@Autowired
-	private AlunoService alunoService;
+	private CursoService cursoService;
 	
 	@GetMapping
-	public List<Aluno> listarAlunos() {
-		return alunoService.listarAlunos();
+	public List<Curso> listarCurso() {
+		return cursoService.listarCurso();
 	}
 	
 	@PostMapping
-	public Aluno cadastrarAluno(@RequestBody Aluno aluno) {
-		return alunoService.cadastrarAluno(aluno);
+	public Curso cadastrarCurso(@RequestBody Curso curso) {
+		return cursoService.cadastrarCurso(curso);
 	}
 	
 	@PutMapping
-	public Aluno atualizarAluno(@RequestBody Aluno aluno) {
-		return alunoService.atualizarAluno(aluno);
+	public Curso atualizarCurso(@RequestBody Curso curso) {
+		return cursoService.atualizarCurso(curso);
 	}
 	
 	@DeleteMapping
-	public Long deletarAluno(@RequestBody Aluno aluno) {
-		return alunoService.deletarAluno(aluno);
+	public Long deletarCurso(@RequestBody Curso curso) {
+		return cursoService.deletarCurso(curso);
 	}
 }

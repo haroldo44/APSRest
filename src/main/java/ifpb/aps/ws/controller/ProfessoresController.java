@@ -22,7 +22,7 @@ public class ProfessoresController {
 	private ProfessoresService professoresService;
 	
 	@GetMapping
-	public List<Professores> listarProfessores() {
+	public List<Professores> listarProfessor() {
 		return professoresService.listarProfessores();
 	}
 	

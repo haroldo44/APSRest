@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import ifpb.aps.ws.model.Professores;
 import ifpb.aps.ws.repository.ProfessoresRepository;
@@ -11,10 +12,10 @@ import ifpb.aps.ws.repository.ProfessoresRepository;
 @Service
 public class ProfessoresService {
 	
-	
 	@Autowired
 	private ProfessoresRepository professoresRepository;
 	
+	@GetMapping
 	public List<Professores> listarProfessores() {
 		return professoresRepository.findAll();
 	}
